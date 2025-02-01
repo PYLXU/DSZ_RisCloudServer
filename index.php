@@ -106,8 +106,8 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET[
     let defaultNavRightItems = [
         { text: 
         '<i class="bi bi-person-circle"></i>', 
-        href: `javascript:createDialog('confirm', 'primary', '用户信息', '<span style="text-align:left" id="userInfo"></span><script>getUserInfo()<\/script>
-        ,()=>{userLink()})` }];
+        href: `javascript:createDialog('confirm', 'primary', '用户信息', '<span style="text-align:left" id="userInfo"></span><script>getUserInfo()<\/script>',()=>{userLink()})` }
+        ];
     // 底栏默认值
     let defaultFooterLinks = [
     { text: 'Github', href: 'https://github.com/examaware/dsz-exam-showboard' },
