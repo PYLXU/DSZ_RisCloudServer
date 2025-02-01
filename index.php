@@ -2,6 +2,7 @@
 // 瑞思账户系统
 $APPID = "";
 $TOKEN = "";
+$ENCYC = ""; // 加密名称
 
 // 处理API请求
 
@@ -22,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userId = $userInfo['userInfo']['basicInfo']['userId'];
     
     // 创建用户目录
-    $mappingFile = __DIR__.'/user/asfasjhcbas.json';
+    $mappingFile = __DIR__.'/user/'.$ENCYC.'.json';
     $mappings = [];
     
     if (file_exists($mappingFile)) {
@@ -59,7 +60,7 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET[
     $userId = $userInfo['userInfo']['basicInfo']['userId'];
     
     // 获取用户目录
-    $mappingFile = __DIR__.'/user/asfasjhcbas.json';
+    $mappingFile = __DIR__.'/user/'.$ENCYC.'.json';
     if (!file_exists($mappingFile)) {
         echo json_encode([]);
         exit;
